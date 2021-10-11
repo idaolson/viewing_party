@@ -9,7 +9,7 @@ script:
 deploy:
   provider: heroku
   api_key: a9408509-8ad9-4950-a81b-149e8d57b81e
-  app:
+  app: awesome-viewing-party
   run: rails db:migrate 
   on: 
     branch: main
