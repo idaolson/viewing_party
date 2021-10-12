@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :users
   resources :dashboard, only: [:index]
-
+  post '/login', to: 'users#login'
+  get '/registration', to: 'users#new'
+  post '/registration', to: 'users#create'
 end
