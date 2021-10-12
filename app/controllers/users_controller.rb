@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     user = user_params
     user[:email] = user[:email].downcase
     new_user = User.create(user)
+    session[:user_id] = new_user.id
     flash[:success] = "Welcome to Viewing Party, #{new_user.name}!"
     redirect_to dashboard_index_path
   end
