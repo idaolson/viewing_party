@@ -7,25 +7,32 @@ RSpec.describe "Welcome Index" do
     expect(page).to have_content("Welcome to Awesome Viewing Party!")
   end
 
-  it "creates a new user" do
+  it "logs in existing user" do
+    user = User.create!(name: "Ida", email: "idaolson@gmail.com", password: "Bianca")
     visit root_path
 
-    click_on "Register Here"
+    expect(page).to have_field(:email)
+    expect(page).to have_field(:password)
 
-    expect(current_path).to eq(new_user_path)
+    fill_in :email, with: user.email
+    fill_in :password, with: user.password
 
-    test_email = "idaolson@gmail.com"
-    test_pass = "Bianca"
-    test_name = "Ida"
+    click_on "Log In"
 
-    save_and_open_page
-    fill_in 'user[name]', with: test_name
-    fill_in 'user[email]', with: test_email
-    fill_in 'user[password]', with: test_pass
-
-    click_on "Register"
-
-    expect(page).to have_content("Welcome to Viewing Party, #{test_name}!")
     expect(current_path).to eq(dashboard_index_path)
+    expect(page).to have_content("Welcome to Viewing Party, #{user.name}!")
+  end
+
+  it "doesn't allow login with bad credentials" do
+    user = User.create!(name: "Ida", email: "idaolson@gmail.com", password: "Bianca")
+    visit root_path
+
+    fill_in :email, with: user.email
+    fill_in :password, with: "Chibi"
+
+    click_on "Log In"
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Log in failed. Please try again.")
   end
 end
