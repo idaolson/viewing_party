@@ -1,4 +1,6 @@
 class DashboardController < ApplicationController
   def index
-  end 
+    @user = current_user
+
+  end
 end
