@@ -16,10 +16,10 @@ gem 'coffee-rails', '~> 4.2'
 gem 'bootsnap'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt'
+gem 'figaro'
 
 group :development, :test do
   gem 'pry'
-  # gem 'travis'
 end
 
 group :development do

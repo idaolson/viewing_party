@@ -9,6 +9,11 @@ RSpec.describe "User dashboard" do
     @event1 = Event.create!(user_id: @user.id, title: "Gladiator", day: "2021-10-10", time: "8:00:00", duration: 90)
     @event2 = Event.create!(user_id: @user2.id, title: "Mad Max Fury Road", day: "2021-12-10", time: "8:00:00", duration: 90)
     @invitation = Invitation.create!(event_id: @event2.id, user_id: @user.id)
+    @invitation2 = Invitation.create!(event_id: @event2.id, user_id: @user3.id)
+
+    @invitation3 = Invitation.create!(event_id: @event1.id, user_id: @user2.id)
+    @invitation4 = Invitation.create!(event_id: @event1.id, user_id: @user3.id)
+
 
     visit root_path
 
@@ -32,6 +37,14 @@ RSpec.describe "User dashboard" do
   end
 
   describe "has a friends section" do
+
+    # it "displays that you have no friends" do
+    #   within "#friends" do
+    #     expect(page).to have_content("You currently have no friends.")
+    #   end
+    # end
+
+
     it "has a field to add a friend" do
       within "#friends" do
         expect(page).to have_field(:email)
@@ -46,7 +59,10 @@ RSpec.describe "User dashboard" do
     end
 
     it "displays the user's friends" do
+
+
       within "#friends" do
+
         expect(page).to have_content(@user3.name)
       end
     end
@@ -60,6 +76,8 @@ RSpec.describe "User dashboard" do
         expect(page).to have_content(@event1.day)
         expect(page).to have_content(@event1.time)
         expect(page).to have_content("Hosting")
+        expect(page).to have_content(@user2.name)
+        expect(page).to have_content(@user3.name)
       end
 
       within "#invited" do
@@ -67,6 +85,9 @@ RSpec.describe "User dashboard" do
         expect(page).to have_content(@event2.day)
         expect(page).to have_content(@event2.time)
         expect(page).to have_content("Invited")
+        expect(page).to have_content("Host: #{@user2.name}")
+        expect(page).to have_content(@user.name)
+        expect(page).to have_content(@user3.name)
       end
     end
   end
