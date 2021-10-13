@@ -10,7 +10,7 @@
     <%= f.submit "Add Friend" %>
   <% end %>
 
-  <% if @user.friends.nil? %>
+  <% if @user.friends.count == 0 %>
     <p>You currently have no friends.</p>
   <% else %>
     <% @user.friends.each do |friend| %>
@@ -28,6 +28,11 @@
     <%= event.day %>
     <%= event.time %>
     <p>Hosting</p>
+    <p>Invited Friends:</p>
+      <% event.users.each do |user| %>
+        <%= user.name %>
+        <br>
+      <% end %>
     </section>
   <% end %>
 
@@ -37,6 +42,15 @@
     <%= event.day %>
     <%= event.time %>
     <p>Invited</p>
+    <p>Host: <%= event.user.name %></p>
+    <% event.users.each do |user| %>
+      <% if user.name == @user.name %>
+        <b><%= user.name %></b>
+      <% else %>
+        <%= user.name %>
+      <% end %>
+      <br>
+    <% end %>
       </section>
   <% end %>
 </div>
