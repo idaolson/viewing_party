@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/registration', to: 'users#new'
   post '/registration', to: 'users#create'
-  get '/discover', to: 'movies#index'
+  get '/discover', to: 'discover#index'
   resources :friendships
+  resources :movies
 end
