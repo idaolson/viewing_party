@@ -1,1 +1,4 @@
-<h1>Welcome, <%= @user.name %>!</h1>
+<% @movies.each do |movie| %>
+  <%= movie.title %> <br>
+  <%= movie.vote_average %> <br>
+<% end %>
