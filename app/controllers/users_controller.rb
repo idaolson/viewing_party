@@ -12,17 +12,7 @@ class UsersController < ApplicationController
     redirect_to dashboard_index_path
   end
 
-  def login
-    @user = User.find_by(email: params[:email])
-    if @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      flash[:success] = "Welcome to Viewing Party, #{@user.name}!"
-      redirect_to dashboard_index_path
-    else
-      flash[:error] = "Log in failed. Please try again."
-      redirect_to root_path
-    end
-  end
+
 
   private
 
