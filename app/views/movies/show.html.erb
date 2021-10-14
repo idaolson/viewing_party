@@ -1,0 +1,19 @@
+<h1>Welcome, <%= @user.name %>!</h1>
+
+<h2><%= @movie.title %></h2>
+
+<h6><%= @movie.vote_average %></h6>
+<h6><%= @movie.runtime %></h6>
+
+<% @movie.genres.each do |genre| %>
+<h6><%= genre %></h6>
+<% end %>
+
+<h4>Summary</h4>
+<p><%= @movie.overview %></p>
+
+
+<h2>Cast:</h2>
+<% @cast.each do |actor| %>
+<p><%= actor.name %> as <%= actor.character %></p>
+<% end %>

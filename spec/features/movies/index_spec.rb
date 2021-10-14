@@ -28,4 +28,50 @@ RSpec.describe "Movies Index page" do
       expect(page).to have_content("Cook With the Book")
     end
   end
+
+  it "has a button for top rated movies" do
+    visit movies_path
+
+    expect(page).to have_button("Find Top Rated Movies")
+    click_button("Find Top Rated Movies")
+
+    expect(current_path).to eq(movies_path)
+  end
+
+  it 'has a search option to search for specific movies' do
+    visit movies_path
+
+    expect(page).to have_field("search")
+    expect(page).to have_button("Find Movie")
+
+    click_button("Find Movie")
+
+    expect(current_path).to eq(movies_path)
+  end
+
+  it "searches for a user-entered movie title" do
+    visit movies_path
+
+    fill_in "search", with: "Die Hard"
+    click_button("Find Movie")
+
+    expect(current_path).to eq(movies_path)
+    expect(page).to have_content("Die Hard")
+    expect(page).to have_content("Die Hard 2")
+    expect(page).to have_content("A Good Day to Die Hard")
+    expect(page).to have_content("Live Free or Die Hard")
+  end
+
+  it "links each movie title to its show page" do
+    visit movies_path
+
+    fill_in "search", with: "Die Hard"
+    click_button("Find Movie")
+
+    expect(page).to have_link("Die Hard 2")
+
+    click_link("Die Hard 2")
+
+    expect(current_path).to eq(movie_path(1573))
+  end
 end

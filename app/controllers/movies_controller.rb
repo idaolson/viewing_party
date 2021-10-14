@@ -9,4 +9,11 @@ class MoviesController < ApplicationController
       @movies = movie_facade.top_rated_movies
     end
   end
+
+  def show
+    movie_facade = MovieFacade.new
+    @movie = movie_facade.search_by_id(params[:id])
+    @user = current_user
+    @cast = movie_facade.cast_by_id(params[:id])
+  end
 end

@@ -1,4 +1,16 @@
+<h1>Welcome, <%= @user.name %>!</h1>
+
+<%= button_to "Find Top Rated Movies", movies_path, method: :get %>
+
+<%= form_with url: movies_path, method: :get , local: true do |f| %>
+  <%= f.label :search, "Search by movie title" %>
+  <%= f.text_field :search %>
+  <%= f.submit "Find Movie" %>
+<% end %>
+
+<h3>Movie Search Results:</h3>
+
 <% @movies.each do |movie| %>
-  <%= movie.title %> <br>
+  <%= link_to movie.title, movie_path(movie.id) %> <br>
   <%= movie.vote_average %> <br>
 <% end %>
