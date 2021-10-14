@@ -1,0 +1,55 @@
+<h1>Welcome, <%= @user.name %>!</h1>
+
+<%= button_to "Discover Movies", discover_path, method: :get %>
+
+<div id="friends">
+  <h3>Friends</h3>
+  <%= form_with url: friendships_path, method: :post , local: true do |f| %>
+    <%= f.label :email, "Friend's Email" %>
+    <%= f.text_field :email %>
+    <%= f.submit "Add Friend" %>
+  <% end %>
+
+  <% if @user.friends.count == 0 %>
+    <p>You currently have no friends.</p>
+  <% else %>
+    <% @user.friends.each do |friend| %>
+      <%= friend.name %>
+    <% end %>
+  <% end %>
+</div>
+
+<div id="events">
+  <h3>Viewing Parties</h3>
+  <% @user.events.each do |event| %>
+  <section id="host">
+    <%= event.title %>
+    <%= event.day %>
+    <%= event.time %>
+    <p>Hosting</p>
+    <p>Invited Friends:</p>
+      <% event.users.each do |user| %>
+        <%= user.name %>
+        <br>
+      <% end %>
+    </section>
+  <% end %>
+
+  <% @user.invited_events.each do |event| %>
+  <section id="invited">
+    <%= event.title %>
+    <%= event.day %>
+    <%= event.time %>
+    <p>Invited</p>
+    <p>Host: <%= event.user.name %></p>
+    <% event.users.each do |user| %>
+      <% if user.name == @user.name %>
+        <b><%= user.name %></b>
+      <% else %>
+        <%= user.name %>
+      <% end %>
+      <br>
+    <% end %>
+      </section>
+  <% end %>
+</div>
