@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "discover movies page" do
+RSpec.describe "Movies Index page" do
   before :each do
     @user = User.create!(name: "Ida", email: "idaolson@gmail.com", password: "Bianca")
     @user2 = User.create!(name: "Kevin", email: "kevinmugele@gmail.com", password: "Colby")
@@ -19,23 +19,13 @@ RSpec.describe "discover movies page" do
     fill_in :password, with: @user.password
 
     click_on "Log In"
-
-    visit discover_path
   end
 
-  it "has a button for top rated movies" do
-    expect(page).to have_button("Find Top Rated Movies")
-    click_button("Find Top Rated Movies")
-
-    expect(current_path).to eq(movies_path)
-  end
-
-  it 'has a search option to search for specific movies' do
-    expect(page).to have_field("search")
-    expect(page).to have_button("Find Movie")
-
-    click_button("Find Movie")
-
-    expect(current_path).to eq(movies_path)
+  describe 'top rated movies' do
+    it 'shows top rated movies' do
+      visit movies_path
+      #Need to find the proper way to test for stubbed API calls. Can we hardcode it?
+      expect(page).to have_content("Cook With the Book")
+    end
   end
 end

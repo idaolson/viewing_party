@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :require_user
+  
   def new
     @user = User.new
   end
@@ -11,8 +13,6 @@ class UsersController < ApplicationController
     flash[:success] = "Welcome to Viewing Party, #{new_user.name}!"
     redirect_to dashboard_index_path
   end
-
-
 
   private
 
