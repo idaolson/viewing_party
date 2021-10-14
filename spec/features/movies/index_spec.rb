@@ -29,7 +29,6 @@ RSpec.describe "Movies Index page" do
     end
   end
 
-
   it "has a button for top rated movies" do
     visit movies_path
 
