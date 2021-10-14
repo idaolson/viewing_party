@@ -5,10 +5,19 @@ class MovieService
     page1[:results] + page2[:results]
   end
 
-  def search_by_title(search)
-    page1 = MovieClient.get_data("/3/search/movie&query=#{search}&page=1")
-    page2 = MovieClient.get_data("/3/search/movie&query=#{search}&page=2")
-    # https://api.themoviedb.org/3/search/movie?api_key=****&language=en-US&query=shrek&page=1&include_adult=false
+  def search_title(search)
+    no_space = search.gsub(/\s+/, "%20")
+    page1 = MovieClient.get_data("/3/search/movie&query=#{no_space}&page=1")
+    page2 = MovieClient.get_data("/3/search/movie&query=#{no_space}&page=2")
     page1[:results] + page2[:results]
+  end
+
+  def search_id(id)
+    data = MovieClient.get_data("/3/movie/#{id}")
+  end
+
+  def cast_id(id)
+    data = MovieClient.get_data("/3/movie/#{id}/credits")
+    data[:cast]
   end
 end
