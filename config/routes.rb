@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   resources :users
   resources :dashboard, only: [:index]
   post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
   get '/registration', to: 'users#new'
   post '/registration', to: 'users#create'
   get '/discover', to: 'discover#index'
   resources :friendships
   resources :movies
+  resources :events
 end

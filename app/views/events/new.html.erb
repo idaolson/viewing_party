@@ -1,0 +1,23 @@
+<%= form_with url: events_path, local: true do |f| %>
+  <%= f.label :movie_title_label, "Movie Title" %><br>
+  <%= f.label :movie_title, @movie.title %><br>
+  <%= f.hidden_field :movie_title, value: @movie.title %>
+  <%= f.hidden_field :movie_id, value: @movie.id %>
+
+  <%= f.label :duration, "Duration of Party" %>
+  <%= f.text_field :duration, value: @movie.runtime %><br>
+
+  <%= f.label :day, "Date of Party" %>
+  <%= f.date_field :day %><br>
+
+  <%= f.label :time, "Time of Party" %>
+  <%= f.time_field :time %><br>
+
+  <%= f.label :include, "Include:" %>
+    <% @user.friends.each do |friend| %>
+      <%= f.check_box :"invitation[#{friend.email}]" %>
+      <%= f.label :"invitation[#{friend.email}]", friend.name %><br>
+    <% end %>
+
+  <%= f.submit "Create Viewing Party" %><br>
+<% end %>

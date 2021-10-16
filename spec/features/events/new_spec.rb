@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "discover movies page", :vcr do
+RSpec.describe "events new page", :vcr do
   before :each do
     @user = User.create!(name: "Ida", email: "idaolson@gmail.com", password: "Bianca")
     @user2 = User.create!(name: "Kevin", email: "kevinmugele@gmail.com", password: "Colby")
@@ -20,22 +20,30 @@ RSpec.describe "discover movies page", :vcr do
 
     click_on "Log In"
 
-    visit discover_path
+    visit movie_path(1573)
+    click_button("Create Viewing Party for Movie")
+
   end
 
-  it "has a button for top rated movies" do
-    expect(page).to have_button("Find Top Rated Movies")
-    click_button("Find Top Rated Movies")
+  it "has a form to create a new viewing party" do
+    expect(page).to have_field(:duration)
+    expect(page).to have_field(:day)
+    expect(page).to have_field(:time)
+    expect(page).to have_unchecked_field(:invitation[@user3.name])
+    expect(page).to have_button("Create Viewing Party")
 
-    expect(current_path).to eq(movies_path)
-  end
+    fill_in :day, with: "2021/10/20"
+    fill_in :time, with: "05:00 AM"
+    check :invitation[@user3.name]
+    click_button "Create Viewing Party"
 
-  it 'has a search option to search for specific movies' do
-    expect(page).to have_field("search")
-    expect(page).to have_button("Find Movie")
+    @user.reload
 
-    click_button("Find Movie")
-
-    expect(current_path).to eq(movies_path)
+    expect(current_path).to eq(dashboard_index_path)
+    expect(page).to have_content("Die Hard 2")
+    expect(page).to have_content("10/20/2021")
+    expect(page).to have_content("5:00 AM")
+    expect(page).to have_content("Hosting")
+    expect(page).to have_content(@user3.name)
   end
 end
