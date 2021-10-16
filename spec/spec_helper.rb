@@ -16,31 +16,35 @@ require 'webmock/rspec'
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-  config.before(:each) do
-    json_response1 = File.read('spec/fixtures/top_rated_page_1.json')
-    stub_request(:get, "https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=vote_average.desc&page=1&api_key=f785d748c5bea34b843307e102da120b").
-      to_return(status: 200, body: json_response1)
-
-    json_response2 = File.read('spec/fixtures/top_rated_page_2.json')
-    stub_request(:get, "https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=vote_average.desc&page=2&api_key=f785d748c5bea34b843307e102da120b").
-      to_return(status: 200, body: json_response2)
-
-    json_response3 = File.read('spec/fixtures/search_die_hard_page_1.json')
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie&query=Die%20Hard&page=1&api_key=f785d748c5bea34b843307e102da120b").
-      to_return(status: 200, body: json_response3)
-
-    json_response4 = File.read('spec/fixtures/search_die_hard_page_2.json')
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie&query=Die%20Hard&page=2&api_key=f785d748c5bea34b843307e102da120b").
-      to_return(status: 200, body: json_response4)
-
-    json_response5 = File.read('spec/fixtures/show_die_hard_2.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/1573&api_key=f785d748c5bea34b843307e102da120b").
-      to_return(status: 200, body: json_response5)
-
-    json_response6 = File.read('spec/fixtures/cast_data.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/1573/credits&api_key=f785d748c5bea34b843307e102da120b").
-      to_return(status: 200, body: json_response6)
-  end
+  # config.before(:each) do
+  #   json_response1 = File.read('spec/fixtures/top_rated_page_1.json')
+  #   stub_request(:get, "https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=vote_average.desc&page=1&api_key=f785d748c5bea34b843307e102da120b").
+  #     to_return(status: 200, body: json_response1)
+  #
+  #   json_response2 = File.read('spec/fixtures/top_rated_page_2.json')
+  #   stub_request(:get, "https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=vote_average.desc&page=2&api_key=f785d748c5bea34b843307e102da120b").
+  #     to_return(status: 200, body: json_response2)
+  #
+  #   json_response3 = File.read('spec/fixtures/search_die_hard_page_1.json')
+  #   stub_request(:get, "https://api.themoviedb.org/3/search/movie&query=Die%20Hard&page=1&api_key=f785d748c5bea34b843307e102da120b").
+  #     to_return(status: 200, body: json_response3)
+  #
+  #   json_response4 = File.read('spec/fixtures/search_die_hard_page_2.json')
+  #   stub_request(:get, "https://api.themoviedb.org/3/search/movie&query=Die%20Hard&page=2&api_key=f785d748c5bea34b843307e102da120b").
+  #     to_return(status: 200, body: json_response4)
+  #
+  #   json_response5 = File.read('spec/fixtures/show_die_hard_2.json')
+  #   stub_request(:get, "https://api.themoviedb.org/3/movie/1573&api_key=f785d748c5bea34b843307e102da120b").
+  #     to_return(status: 200, body: json_response5)
+  #
+  #   json_response6 = File.read('spec/fixtures/cast_data.json')
+  #   stub_request(:get, "https://api.themoviedb.org/3/movie/1573/credits&api_key=f785d748c5bea34b843307e102da120b").
+  #     to_return(status: 200, body: json_response6)
+  #
+  #   json_response7 = File.read('spec/fixtures/reviews_die_hard_2.json')
+  #   stub_request(:get, "https://api.themoviedb.org/3/movie/1573/reviews&api_key=f785d748c5bea34b843307e102da120b").
+  #     to_return(status: 200, body: json_response7)
+  # end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
