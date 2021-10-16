@@ -29,4 +29,13 @@ class MovieFacade
     end
     cast.take(10)
   end
+
+  def review_by_id(id)
+    review_data = MovieService.new.review_id(id)
+    review_data.filter_map do |review|
+      if !review[:author].nil?
+        Review.new(review)
+      end
+    end
+  end
 end
