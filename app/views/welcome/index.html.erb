@@ -1,13 +1,16 @@
 <h1>Welcome to Awesome Viewing Party!</h1>
 
 <h5>Look up movies! Make friends! Have a party!</h5>
+<% if current_user %>
+  <%= link_to "Log out", logout_path, method: :delete%>
+<% else %>
+  <%= link_to "Register Here", registration_path %>
 
-<%= link_to "Register Here", registration_path %>
-
-<%= form_with url: login_path, method: :post do |f| %>
-  <%= f.label :email, 'Email:' %>
-  <%= f.text_field :email %>
-  <%= f.label :password, 'Password:' %>
-  <%= f.password_field :password %>
-  <%= f.submit 'Log In' %>
+  <%= form_with url: login_path, method: :post, local: true do |f| %>
+    <%= f.label :email, 'Email:' %>
+    <%= f.text_field :email %>
+    <%= f.label :password, 'Password:' %>
+    <%= f.password_field :password %>
+    <%= f.submit 'Log In' %>
+  <% end %>
 <% end %>
