@@ -24,7 +24,6 @@ RSpec.describe "Movies Index page", :vcr  do
   describe 'top rated movies' do
     it 'shows top rated movies' do
       visit movies_path
-      #Need to find the proper way to test for stubbed API calls. Can we hardcode it?
       expect(page).to have_content("Cook With the Book")
     end
   end
