@@ -24,7 +24,8 @@ RSpec.describe "Movies Index page", :vcr  do
   describe 'top rated movies' do
     it 'shows top rated movies' do
       visit movies_path
-      expect(page).to have_content("Cook With the Book")
+
+      expect(page).to have_content("The Godfather")
     end
   end
 
