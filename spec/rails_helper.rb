@@ -46,7 +46,7 @@ VCR.configure do |c|
   c.configure_rspec_metadata!
   c.filter_sensitive_data('<API_KEY>') { ENV['movie_api_key'] }
   c.default_cassette_options = {
-    match_requests_on: %i[method host path]
+    re_record_interval: 1.day
   }
 end
 
