@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/1573?api_key=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Oct 2021 13:53:34 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 6273e3c59f9e8fb2d42d05418181916b1e5d4be2
+      X-Memc-Age:
+      - '1115'
+      X-Memc-Expires:
+      - '14142'
+      Etag:
+      - W/"f4f6c351877ebbf97c2fb276f54da359"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 c855cfdfac580e3b58f1c68c8d67dcf6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR52-C2
+      X-Amz-Cf-Id:
+      - 40DYgxBdANt6_pims9nTiW7bFX_R_LkX5UXBqA8KtdgcrKtCE0d1cw==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvZmdrZ2FiNFJlbDBuT0kzQjNzY0hlTkI0TW42LmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6MTU3MCwibmFtZSI6IkRpZSBIYXJkIENvbGxlY3Rpb24iLCJwb3N0ZXJfcGF0aCI6Ii9uZ2xrbmlrQWlFYnNGOUNXNXhWOWZDMzc4SkguanBnIiwiYmFja2Ryb3BfcGF0aCI6Ii81a0hWYmxyODdGVVNjdWFiMVBWU3NLNjkySUwuanBnIn0sImJ1ZGdldCI6NzAwMDAwMDAsImdlbnJlcyI6W3siaWQiOjI4LCJuYW1lIjoiQWN0aW9uIn0seyJpZCI6NTMsIm5hbWUiOiJUaHJpbGxlciJ9XSwiaG9tZXBhZ2UiOiJodHRwczovL3d3dy5mb3htb3ZpZXMuY29tL21vdmllcy9kaWUtaGFyZC0yIiwiaWQiOjE1NzMsImltZGJfaWQiOiJ0dDAwOTk0MjMiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJEaWUgSGFyZCAyIiwib3ZlcnZpZXciOiJPZmYtZHV0eSBjb3AgSm9obiBNY0NsYW5lIGlzIGdyaXBwZWQgd2l0aCBhIGZlZWxpbmcgb2YgZMOpasOgIHZ1IHdoZW4sIG9uIGEgc25vd3kgQ2hyaXN0bWFzIEV2ZSBpbiB0aGUgbmF0aW9u4oCZcyBjYXBpdGFsLCB0ZXJyb3Jpc3RzIHNlaXplIGEgbWFqb3IgaW50ZXJuYXRpb25hbCBhaXJwb3J0LCBob2xkaW5nIHRob3VzYW5kcyBvZiBob2xpZGF5IHRyYXZlbGVycyBob3N0YWdlLiBSZW5lZ2FkZSBtaWxpdGFyeSBjb21tYW5kb3MgbGVkIGJ5IGEgbXVyZGVyb3VzIHJvZ3VlIG9mZmljZXIgcGxvdCB0byByZXNjdWUgYSBkcnVnIGxvcmQgZnJvbSBqdXN0aWNlIGFuZCBhcmUgcHJlcGFyZWQgZm9yIGV2ZXJ5IGNvbnRpbmdlbmN5IGV4Y2VwdCBvbmU6IE1jQ2xhbmXigJlzIHNtYXJ0LW1vdXRoZWQgaGVyb2ljcy4iLCJwb3B1bGFyaXR5IjoyNi45ODQsInBvc3Rlcl9wYXRoIjoiL3dVRWl6a09OeFBabUlXUTJsbk10dFcwc3VYSC5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjEwNzMsImxvZ29fcGF0aCI6bnVsbCwibmFtZSI6IkdvcmRvbiBDb21wYW55Iiwib3JpZ2luX2NvdW50cnkiOiIifSx7ImlkIjoxODg1LCJsb2dvX3BhdGgiOiIveGx2b09acjRzMVB5Z29zcndaeW9sSUZlNXhzLnBuZyIsIm5hbWUiOiJTaWx2ZXIgUGljdHVyZXMiLCJvcmlnaW5fY291bnRyeSI6IlVTIn0seyJpZCI6MjUsImxvZ29fcGF0aCI6Ii9xWkNjMWx0eTVGelgzMGFPQ1ZSQkx6YVZtY3AucG5nIiwibmFtZSI6IjIwdGggQ2VudHVyeSBGb3giLCJvcmlnaW5fY291bnRyeSI6IlVTIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IlVTIiwibmFtZSI6IlVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSJ9XSwicmVsZWFzZV9kYXRlIjoiMTk5MC0wNy0wMiIsInJldmVudWUiOjI0MDAzMTA5NCwicnVudGltZSI6MTI0LCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9LHsiZW5nbGlzaF9uYW1lIjoiU3BhbmlzaCIsImlzb182MzlfMSI6ImVzIiwibmFtZSI6IkVzcGHDsW9sIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiJEaWUgSGFyZGVyIiwidGl0bGUiOiJEaWUgSGFyZCAyIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjYuOSwidm90ZV9jb3VudCI6NDM0Nn0=
+  recorded_at: Mon, 18 Oct 2021 13:53:34 GMT
+recorded_with: VCR 6.0.0

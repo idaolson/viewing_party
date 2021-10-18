@@ -4,11 +4,11 @@
 
 <%= button_to "Create Viewing Party for Movie", new_event_path, method: :get, params: {movie_id: @movie.id} %>
 
-<h6><%= @movie.vote_average %></h6>
-<h6><%= format_runtime(@movie.runtime) %></h6>
+<p>Vote Average: <%= @movie.vote_average %></p>
+<p>Runtime: <%= format_runtime(@movie.runtime) %></p>
 
 <% @movie.genres.each do |genre| %>
-<h6><%= genre %></h6>
+<p>Genre(s):<%= genre %></p>
 <% end %>
 
 <h4>Summary</h4>

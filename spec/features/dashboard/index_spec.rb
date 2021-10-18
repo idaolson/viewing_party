@@ -54,6 +54,20 @@ RSpec.describe "User dashboard", :vcr do
         expect(page).to have_content(@user2.name)
       end
     end
+
+    it "gives an error if friend doesn't exist" do
+      within "#friends" do
+        expect(page).to have_field(:email)
+        expect(page).to have_button("Add Friend")
+
+        fill_in :email, with: 'fake@gmail.com'
+
+        click_button "Add Friend"
+      end
+
+    expect(page).to have_content("Friend not found.")
+    expect(current_path).to eq(dashboard_index_path)
+    end
   end
 
   it "shows user's upcoming viewing parties" do
