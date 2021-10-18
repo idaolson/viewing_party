@@ -50,17 +50,19 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 fd4983be77ace22659323918c5b30f1f.cloudfront.net (CloudFront)
+      - 1.1 a3974a97ba504b481cfb8868c9d58588.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - EWR52-C2
+      - JFK51-C1
       X-Amz-Cf-Id:
-      - SKER3CoLqS_-s23enQOunzMgmhFYNcSRHAoHJ9Lpg5ntSwbHFXLWcQ==
+      - Sl5U431XWzuC2d3AjAJtAg7L9xGbdRw4IlhIfafI8OpeuC62miR1EA==
+      Age:
+      - '19652'
     body:
       encoding: ASCII-8BIT
       string: '{"id":1573,"page":1,"results":[{"author":"talisencrw","author_details":{"name":"","username":"talisencrw","avatar_path":"/https://secure.gravatar.com/avatar/cbcc9350415274a3c68399bd37ca3ebc.jpg","rating":9.0},"content":"Great
         fun re-watching this after checking out the original for the first time. One
         of the very best filmic franchises out there, to be sure.","created_at":"2016-08-13T20:39:17.279Z","id":"57af8575925141289d006f7a","updated_at":"2021-06-23T15:57:50.257Z","url":"https://www.themoviedb.org/review/57af8575925141289d006f7a"}],"total_pages":1,"total_results":1}'
-  recorded_at: Mon, 18 Oct 2021 13:55:29 GMT
+  recorded_at: Mon, 18 Oct 2021 19:23:01 GMT
 recorded_with: VCR 6.0.0
