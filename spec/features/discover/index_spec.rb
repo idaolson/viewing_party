@@ -24,7 +24,6 @@ RSpec.describe "discover movies page", :vcr do
   end
 
   it "has a button for top rated movies" do
-    save_and_open_page
     expect(page).to have_button("Find Top Rated Movies")
     click_button("Find Top Rated Movies")
 
