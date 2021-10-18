@@ -10,9 +10,9 @@ class EventsController < ApplicationController
     @user = current_user
     @event = @user.events.new(movie_id: params[:movie_id], title: params[:movie_title], day: params[:day], time: params[:time], duration: params[:duration])
     if @event.save
-      params["invitation"].each do |k,v|
+      params["invitation"].each do |email, v|
         next unless v == "1"
-        new_user = User.find_by(email: k)
+        new_user = User.find_by(email: email)
         Invitation.create(user_id: new_user.id, event_id: @event.id)
       end
       redirect_to dashboard_index_path
