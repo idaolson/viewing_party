@@ -12,5 +12,5 @@
 
 <% @movies.each do |movie| %>
   <%= link_to movie.title, movie_path(movie.id) %> <br>
-  <%= movie.vote_average %> <br>
+  <p>Vote Average: <%= movie.vote_average %> <br></p>
 <% end %>
