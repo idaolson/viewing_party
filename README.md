@@ -7,6 +7,7 @@ Link to Live Application: [Viewing Party](https://awesome-viewing-party.herokuap
 - [Database Schema](#database-schema)
 - [Getting Started](#getting-started)
 - [Contributors](#contributors)
+
 ## Overview
 Viewing party is an application in which users can explore movie options and create a viewing party event for the user and friends.
 
@@ -47,7 +48,9 @@ Project requirements: [link](https://backend.turing.edu/module3/projects/viewing
   <img src="https://img.shields.io/badge/SQL-4169E1.svg?style=for-the-badge&logo=SQL&logoColor=white" />
   <img src="https://img.shields.io/badge/ActiveRecord-CC0000.svg?&style=for-the-badge&logo=rubyonrails&logoColor=white" />
 </p>
+
 ### Tools
+
 <p>
   <img src="https://img.shields.io/badge/Atom-66595C.svg?&style=for-the-badge&logo=atom&logoColor=white" />
   <img src="https://img.shields.io/badge/git-F05032.svg?&style=for-the-badge&logo=git&logoColor=white" />
@@ -56,7 +59,9 @@ Project requirements: [link](https://backend.turing.edu/module3/projects/viewing
   <img src="https://img.shields.io/badge/PostgreSQL-4169E1.svg?&style=for-the-badge&logo=postgresql&logoColor=white" /> <br />
   <img src="https://img.shields.io/badge/postico-4169E1.svg?&style=for-the-badge&logo=Postico&logoColor=white" />
 </p>
-#### Gems
+
+### Gems
+
 <!-- <p>
   <img src="https://img.shields.io/badge/bootstrap-7952B3.svg?&style=for-the-badge&logo=bootstrap&logoColor=white" />
   <img src="https://img.shields.io/badge/capybara-E9573F.svg?&style=for-the-badge&logo=rubygems&logoColor=white" />
@@ -71,7 +76,9 @@ Project requirements: [link](https://backend.turing.edu/module3/projects/viewing
   <img src="https://img.shields.io/badge/vcr-E9573F.svg?&style=for-the-badge&logo=rubygems&logoColor=white" />
   <img src="https://img.shields.io/badge/webmock-E9573F.svg?&style=for-the-badge&logo=rubygems&logoColor=white" />
 </p> -->
+
 ### Processes
+
 <p>
   <img src="https://img.shields.io/badge/OOP-b81818.svg?&style=for-the-badge&logo=OOP&logoColor=white" />
   <img src="https://img.shields.io/badge/TDD-b87818.svg?&style=for-the-badge&logo=TDD&logoColor=white" />
