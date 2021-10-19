@@ -8,7 +8,7 @@ Link to Live Application: [Viewing Party](https://awesome-viewing-party.herokuap
 - [Getting Started](#getting-started)
 - [Contributors](#contributors)
 ## Overview
-This is an application to explore movies and create a viewing party event for you and your friends. 
+Viewing party is an application in which users can explore movie options and create a viewing party event for the user and friends.
 
 ## Technical & Learning Goals
 
@@ -74,21 +74,13 @@ Project requirements: [link](https://backend.turing.edu/module3/projects/viewing
   <img src="https://img.shields.io/badge/MVC-b8b018.svg?&style=for-the-badge&logo=MVC&logoColor=white" />
   <img src="https://img.shields.io/badge/REST-33b818.svg?&style=for-the-badge&logo=REST&logoColor=white" />
 </p>
+
 ## Database Schema
-![Database Schema](image link)
+![Database Schema](https://user-images.githubusercontent.com/82777170/137946435-4c190067-a67b-49df-b0a1-9da4e17ae4cb.png)
 ## Contributors
 **Kevin Mugele**
 - Github: [kevinmugele](https://github.com/kevinmugele)
 - LinkedIn: [Kevin Mugele](https://www.linkedin.com/in/kevinmugele/)
-
-
-# Viewing Party
-
-This is the base repo for the [viewing party project](https://backend.turing.io/module3/projects/viewing_party) used for Turing's Backend Module 3.
-
-### About this Project
-
-Viewing party is an application in which users can explore movie options and create a viewing party event for the user and friend's.
 
 ## Local Setup
 
@@ -96,11 +88,8 @@ Viewing party is an application in which users can explore movie options and cre
 2. Install gem packages: `bundle install`
 3. Setup the database: `rails db:create`
 
-
 ## Versions
 
 - Ruby 2.7.2
-
 - Rails 5.2.5
 
-Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party/wireframes)
