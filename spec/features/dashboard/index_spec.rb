@@ -96,6 +96,7 @@ RSpec.describe "User dashboard", :vcr do
         expect(page).to have_content("Invited")
         expect(page).to have_content("Host: #{@user2.name}")
         expect(page).to have_content(@user.name)
+        expect(html).to include("<b>#{@user.name}</b>")
         expect(page).to have_content(@user3.name)
       end
     end
