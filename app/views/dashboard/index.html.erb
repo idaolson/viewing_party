@@ -24,7 +24,7 @@
   <% @user.events.each do |event| %>
   <section id="host-<%= event.id %>">
     <%= link_to event.title, movie_path(event.movie_id) %>
-    <p>Day: <%= event.day.strftime("%-m/%-d/%Y") %></p>
+    <p>Date: <%= event.day.strftime("%-m/%-d/%Y") %></p>
     <p>Time: <%= event.time.strftime("%l:%M %p") %></p>
     <p>Hosting</p>
     <p>Invited Friends:</p>
@@ -38,7 +38,7 @@
   <% @user.invited_events.each do |event| %>
   <section id="invited-<%= event.id %>">
     <%= link_to event.title, movie_path(event.movie_id) %>
-    <p>Day: <%= event.day.strftime("%-m/%-d/%Y") %></p>
+    <p>Date: <%= event.day.strftime("%-m/%-d/%Y") %></p>
     <p>Time: <%= event.time.strftime("%l:%M %p") %></p>
     <p>You're Invited</p>
     <p>Host: <%= event.user.name %></p>
