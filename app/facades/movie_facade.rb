@@ -6,6 +6,13 @@ class MovieFacade
     end
   end
 
+  def upcoming_movies
+    movie_data = MovieService.upcoming
+    movie_data.map do |movie_data|
+      Movie.new(movie_data)
+    end
+  end
+
   def search_by_title(title)
     search_data = MovieService.search_title(title)
     search_data.filter_map do |movie_data|
@@ -37,5 +44,13 @@ class MovieFacade
         Review.new(review)
       end
     end
+  end
+
+  def recommended_by_id(id)
+    recommended = MovieService.recommended_id(id)
+    rec = recommended.map do |movie_data|
+      Movie.new(movie_data)
+    end
+    rec.take(3)
   end
 end

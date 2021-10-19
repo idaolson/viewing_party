@@ -38,4 +38,10 @@ RSpec.describe "discover movies page", :vcr do
 
     expect(current_path).to eq(movies_path)
   end
+
+  it "has a button for upcoming movies" do
+    expect(page).to have_button("Find Upcoming Movies")
+    click_button("Find Upcoming Movies")
+    expect(current_path).to eq(movies_path)
+  end
 end

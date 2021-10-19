@@ -25,4 +25,15 @@ class MovieService
     data = MovieClient.get_data("/3/movie/#{id}/reviews?")
     data[:results]
   end
+
+  def self.upcoming
+    page1 = MovieClient.get_data("/3/movie/upcoming?language=en-US&page=1")
+    page2 = MovieClient.get_data("/3/movie/upcoming?language=en-US&page=2")
+    page1[:results] + page2[:results]
+  end
+
+  def self.recommended_id(id)
+    recommended = MovieClient.get_data("/3/movie/#{id}/recommendations?")
+    recommended[:results]
+  end
 end

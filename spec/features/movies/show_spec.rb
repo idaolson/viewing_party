@@ -50,4 +50,10 @@ RSpec.describe "Movies Index page", :vcr do
     click_button("Create Viewing Party for Movie")
     expect(current_path).to eq(new_event_path)
   end
+
+  it 'shows recommended movies' do
+    expect(page).to have_content('Recommended Movies')
+    click_link('Die Hard: With a Vengeance')
+    expect(current_path).to eq(movie_path(1572))
+  end
 end

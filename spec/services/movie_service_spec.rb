@@ -46,13 +46,23 @@ RSpec.describe MovieService, :vcr do
     expect(review_data).to have_key(:author)
     expect(review_data).to have_key(:content)
   end
+
+  it '#upcoming' do
+    movies = MovieService.upcoming
+    expect(movies).to be_an(Array)
+    expect(movies.size).to eq(40)
+    movie_data = movies.first
+    expect(movie_data).to have_key(:id)
+    expect(movie_data).to have_key(:title)
+    expect(movie_data).to have_key(:vote_average)
+  end
+
+  it '#recommended_id' do
+    recommended = MovieService.recommended_id(1573)
+    expect(recommended).to be_a(Array)
+    expect(recommended.first).to have_key(:id)
+    expect(recommended.first).to have_key(:title)
+    expect(recommended.first).to have_key(:vote_average)
+    expect(recommended.first).to have_key(:overview)
+  end
 end
-
-
-
-#
-#   def self.review_id(id)
-#     data = MovieClient.get_data("/3/movie/#{id}/reviews?")
-#     data[:results]
-#   end
-# end
