@@ -10,12 +10,16 @@ class EventsController < ApplicationController
     @user = current_user
     @event = @user.events.new(movie_id: params[:movie_id], title: params[:movie_title], day: params[:date], time: params[:time], duration: params[:duration])
     if @event.save
-      params["invitation"].each do |email, v|
-        next unless v == "1"
-        new_user = User.find_by(email: email)
-        Invitation.create(user_id: new_user.id, event_id: @event.id)
+      if params['invitation']
+        params["invitation"].each do |email, v|
+          next unless v == "1"
+          new_user = User.find_by(email: email)
+          Invitation.create(user_id: new_user.id, event_id: @event.id)
+        end
+        redirect_to dashboard_index_path
+      else
+        redirect_to dashboard_index_path
       end
-      redirect_to dashboard_index_path
     else
       flash[:error] = "Viewing Party was not created. Try again."
       redirect_to new_event_path(movie_id: params[:movie_id])
