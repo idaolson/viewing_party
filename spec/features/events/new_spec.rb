@@ -27,12 +27,12 @@ RSpec.describe "events new page", :vcr do
 
   it "has a form to create a new viewing party" do
     expect(page).to have_field(:duration)
-    expect(page).to have_field(:day)
+    expect(page).to have_field(:date)
     expect(page).to have_field(:time)
     expect(page).to have_unchecked_field(:invitation[@user3.name])
     expect(page).to have_button("Create Viewing Party")
 
-    fill_in :day, with: "2021/10/20"
+    fill_in :date, with: "2021/10/20"
     fill_in :time, with: "05:00 AM"
     check :invitation[@user3.name]
     click_button "Create Viewing Party"
@@ -45,5 +45,17 @@ RSpec.describe "events new page", :vcr do
     expect(page).to have_content("5:00 AM")
     expect(page).to have_content("Hosting")
     expect(page).to have_content(@user3.name)
+  end
+
+  it "sad path for new viewing party" do
+    click_button "Create Viewing Party"
+
+    expect(current_path).to eq(new_event_path)
+    expect(page).to have_content("Viewing Party was not created. Try again.")
+    expect(page).to have_field(:duration)
+    expect(page).to have_field(:date)
+    expect(page).to have_field(:time)
+    expect(page).to have_unchecked_field(:invitation[@user3.name])
+    expect(page).to have_button("Create Viewing Party")
   end
 end
