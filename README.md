@@ -1,5 +1,5 @@
 # Viewing Party
-Link to Live Application: [Viewing Party](awesome-viewing-party.herokuapp.com)
+Link to Live Application: [Viewing Party](https://awesome-viewing-party.herokuapp.com)
 ## Table of Contents
 - [Overview](#overview)
 - [Learning Goals](#learning-goals)
