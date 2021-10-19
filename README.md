@@ -10,7 +10,26 @@ Link to Live Application: [Viewing Party](https://awesome-viewing-party.herokuap
 ## Overview
 -
 ## Learning Goals
-Learning goals and areas of focus consisted of:
+Technical goals and areas of focus:
+Explicit:
+
+- Consume JSON APIs that require authentication 
+- Build an application that requires basic authentication 
+- Organize and refactor code to be more maintainable 
+- Implement a self-referential relationship in ActiveRecord 
+- Apply RuboCop’s style guide for code quality 
+- Utilize Continuous Integration using Travis CI 
+- Deploy to Heroku 
+
+Implicit
+Below are skills that are more general/necessary on the job that are practiced by completing the goals above.
+
+Reading Documentation
+Implementing concepts that are not explicitly taught
+Practice individual research (articles, videos, mentors)
+Team communication
+Prioritizing goals/user stories
+Time management
 -
 Project requirements: [link](https://backend.turing.edu/module3/projects/viewing_party/index)<br />
 ## Tools Used
