@@ -8,7 +8,8 @@ Link to Live Application: [Viewing Party](https://awesome-viewing-party.herokuap
 - [Getting Started](#getting-started)
 - [Contributors](#contributors)
 ## Overview
--
+This is an application to explore movies and create a viewing party event for you and your friends. 
+
 ## Technical & Learning Goals
 
 - Consume JSON APIs that require authentication 
