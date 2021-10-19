@@ -7,10 +7,20 @@
   <%= f.text_field :search %>
   <%= f.submit "Find Movie" %>
 <% end %>
-
+<section>
 <h3>Movie Search Results:</h3>
+<table>
+  <tr>
+    <th>Movie</th>
+    <th>Vote Average</th>
+  </tr>
 
 <% @movies.each do |movie| %>
-  <%= link_to movie.title, movie_path(movie.id) %> <br>
-  <p>Vote Average: <%= movie.vote_average %> <br></p>
+<tr>
+  <td><%= link_to movie.title, movie_path(movie.id) %></td>
+  <td><%= movie.vote_average %></td>
+  </tr>
 <% end %>
+
+</table>
+</section>
