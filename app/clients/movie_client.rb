@@ -5,11 +5,11 @@ class MovieClient
     end
 
     def api_key
-      "&api_key=#{ENV["movie_api_key"]}"
+      "&api_key=#{ENV['movie_api_key']}"
     end
 
     def conn
-      Faraday.new("https://api.themoviedb.org")
+      Faraday.new('https://api.themoviedb.org')
     end
 
     def parse_data(response)

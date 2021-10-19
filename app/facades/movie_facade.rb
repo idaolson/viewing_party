@@ -1,24 +1,22 @@
 class MovieFacade
   def top_rated_movies
     movie_data = MovieService.top_movies
-    movie_data.map do |movie_data|
-      Movie.new(movie_data)
+    movie_data.map do |movie|
+      Movie.new(movie)
     end
   end
 
   def upcoming_movies
     movie_data = MovieService.upcoming
-    movie_data.map do |movie_data|
-      Movie.new(movie_data)
+    movie_data.map do |movie|
+      Movie.new(movie)
     end
   end
 
   def search_by_title(title)
     search_data = MovieService.search_title(title)
-    search_data.filter_map do |movie_data|
-      if movie_data[:title].include?(title)
-        Movie.new(movie_data)
-      end
+    search_data.filter_map do |movie|
+      Movie.new(movie) if movie[:title].include?(title)
     end
   end
 
@@ -29,10 +27,8 @@ class MovieFacade
 
   def cast_by_id(id)
     cast_data = MovieService.cast_id(id)
-    cast = cast_data.map do |cast_data|
-      if !cast_data[:character].nil?
-        Cast.new(cast_data)
-      end
+    cast = cast_data.map do |member|
+      Cast.new(member) unless member[:character].nil?
     end
     cast.take(10)
   end
@@ -40,9 +36,7 @@ class MovieFacade
   def review_by_id(id)
     review_data = MovieService.review_id(id)
     review_data.filter_map do |review|
-      if !review[:author].nil?
-        Review.new(review)
-      end
+      Review.new(review) unless review[:author].nil?
     end
   end
 

@@ -11,10 +11,10 @@ class Movie
   end
 
   def get_genres(data)
-    if !data[:genres].nil?
-      data[:genres].map do |genre|
-        genre[:name]
-      end
+    return if data[:genres].nil?
+
+    data[:genres].map do |genre|
+      genre[:name]
     end
   end
 end

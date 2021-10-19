@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def require_user
-    unless current_user
-       redirect_to root_path
-       flash[:notice] = "You must sign in or create an account to access site"
-    end
+    return if current_user
+
+    redirect_to root_path
+    flash[:notice] = 'You must sign in or create an account to access site'
   end
 
   def current_user

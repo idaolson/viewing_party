@@ -35,3 +35,6 @@ Rails/UniqueValidationWithoutIndex:
 
 Style/EmptyMethod:
   Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
