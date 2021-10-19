@@ -9,9 +9,7 @@ Link to Live Application: [Viewing Party](https://awesome-viewing-party.herokuap
 - [Contributors](#contributors)
 ## Overview
 -
-## Learning Goals
-Technical goals and areas of focus:
-Explicit:
+## Technical & Learning Goals
 
 - Consume JSON APIs that require authentication 
 - Build an application that requires basic authentication 
@@ -20,17 +18,16 @@ Explicit:
 - Apply RuboCop’s style guide for code quality 
 - Utilize Continuous Integration using Travis CI 
 - Deploy to Heroku 
+- Utilize GitHub Projects
+- Team communication
+- Prioritizing goals/user stories
+- Reading Documentation
+- Implementing concepts that are not explicitly taught
+- Practice individual research (articles, videos, mentors)
+- Time management
 
-Implicit
-Below are skills that are more general/necessary on the job that are practiced by completing the goals above.
 
-Reading Documentation
-Implementing concepts that are not explicitly taught
-Practice individual research (articles, videos, mentors)
-Team communication
-Prioritizing goals/user stories
-Time management
--
+
 Project requirements: [link](https://backend.turing.edu/module3/projects/viewing_party/index)<br />
 ## Tools Used
 ### Framework
