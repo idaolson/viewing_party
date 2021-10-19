@@ -25,3 +25,8 @@
 <p><%= review.author %></p>
 <p><%= review.content %></p>
 <% end %>
+
+<h2>Recommended Movies</h2>
+  <% @recommended.each do |movie| %>
+    <%= link_to movie.title, movie_path(movie.id) %><br>
+  <% end %>
