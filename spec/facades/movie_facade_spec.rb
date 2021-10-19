@@ -45,4 +45,24 @@ RSpec.describe MovieFacade, :vcr do
       expect(result.first).to be_a(Review)
     end
   end
+
+  describe 'upcoming movies' do
+    it 'returns an array of movie objects' do
+      movie_facade = MovieFacade.new
+      result = movie_facade.upcoming_movies
+      expect(result.size).to eq(40)
+      expect(result).to be_a(Array)
+      expect(result.first).to be_a(Movie)
+    end
+  end
+
+  describe 'recommended movies' do
+    it 'returns an array of recommended movie objects' do
+      movie_facade = MovieFacade.new
+      result = movie_facade.recommended_by_id(1573)
+      expect(result.size).to eq(3)
+      expect(result).to be_a(Array)
+      expect(result.first).to be_a(Movie)
+    end
+  end
 end
