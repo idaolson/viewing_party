@@ -92,7 +92,8 @@ Project requirements: [link](https://backend.turing.edu/module3/projects/viewing
 - Github: [kevinmugele](https://github.com/kevinmugele)
 - LinkedIn: [Kevin Mugele](https://www.linkedin.com/in/kevinmugele/)
 **Ida Olson**
-- Github:
+- Github: [Ida Olson](https://github.com/idaolson)
+- LinkedIn: [Ida Olson] (https://www.linkedin.com/in/idaolson/)
 
 ## Local Setup
 
