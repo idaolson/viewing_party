@@ -70,7 +70,6 @@ Project requirements: [link](https://backend.turing.edu/module3/projects/viewing
   <img src="https://img.shields.io/badge/orderly-E9573F.svg?&style=for-the-badge&logo=rubygems&logoColor=white" />
   <img src="https://img.shields.io/badge/pry-E9573F.svg?&style=for-the-badge&logo=rubygems&logoColor=white" />
   <img src="https://img.shields.io/badge/rspec-E9573F.svg?&style=for-the-badge&logo=rubygems&logoColor=white" />
-<!--   <img src="https://img.shields.io/badge/Sass-CC6699.svg?&style=for-the-badge&logo=sass&logoColor=white" /> <br /> -->
   <img src="https://img.shields.io/badge/shoulda--matchers-E9573F.svg?&style=for-the-badge&logo=rubygems&logoColor=white" />
   <img src="https://img.shields.io/badge/simplecov-E9573F.svg?&style=for-the-badge&logo=rubygems&logoColor=white" />
   <img src="https://img.shields.io/badge/vcr-E9573F.svg?&style=for-the-badge&logo=rubygems&logoColor=white" />
@@ -92,6 +91,8 @@ Project requirements: [link](https://backend.turing.edu/module3/projects/viewing
 **Kevin Mugele**
 - Github: [kevinmugele](https://github.com/kevinmugele)
 - LinkedIn: [Kevin Mugele](https://www.linkedin.com/in/kevinmugele/)
+**Ida Olson**
+- Github:
 
 ## Local Setup
 
