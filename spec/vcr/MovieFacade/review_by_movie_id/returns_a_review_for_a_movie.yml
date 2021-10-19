@@ -24,6 +24,8 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
+      Date:
+      - Tue, 19 Oct 2021 17:20:27 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -33,18 +35,16 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
       - 26fb04db4835e8d0d62686b58787a320c8598248
       X-Memc-Age:
-      - '16467'
+      - '7136'
       X-Memc-Expires:
-      - '491'
-      Date:
-      - Mon, 18 Oct 2021 19:26:56 GMT
-      Cache-Control:
-      - public, max-age=28800
+      - '7419'
       Etag:
       - W/"d86707e73933d54f07a0a1b335000dda"
       Vary:
@@ -52,17 +52,17 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 ef8f66c83aecd87910ce2e1153544a21.cloudfront.net (CloudFront)
+      - 1.1 ab95c5a0dcf51f52101ed4d59d15a2a3.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - SEA19-C3
+      - JFK51-C1
       X-Amz-Cf-Id:
-      - vn2vhvVvLN51CZUAcPOjh2p3T1px5MmbTwV2AwWOZGwF_UCdVwSQIQ==
+      - uyRQJLzoB5TlnVLGV2R3lKNg3RuZ1-pQiiL8ONjaXRXvPGuKvVpaRw==
       Age:
-      - '13734'
+      - '977'
     body:
       encoding: ASCII-8BIT
       string: '{"id":1573,"page":1,"results":[{"author":"talisencrw","author_details":{"name":"","username":"talisencrw","avatar_path":"/https://secure.gravatar.com/avatar/cbcc9350415274a3c68399bd37ca3ebc.jpg","rating":9.0},"content":"Great
         fun re-watching this after checking out the original for the first time. One
         of the very best filmic franchises out there, to be sure.","created_at":"2016-08-13T20:39:17.279Z","id":"57af8575925141289d006f7a","updated_at":"2021-06-23T15:57:50.257Z","url":"https://www.themoviedb.org/review/57af8575925141289d006f7a"}],"total_pages":1,"total_results":1}'
-  recorded_at: Mon, 18 Oct 2021 23:15:50 GMT
+  recorded_at: Tue, 19 Oct 2021 17:36:44 GMT
 recorded_with: VCR 6.0.0
