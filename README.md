@@ -11,6 +11,16 @@ Link to Live Application: [Viewing Party](https://awesome-viewing-party.herokuap
 ## Overview
 Viewing party is an application in which users can explore movie options and create a viewing party event for the user and friends.
 
+## Contributors
+
+**Kevin Mugele**
+- [GitHub](https://github.com/kevinmugele)
+- [LinkedIn](https://www.linkedin.com/in/kevinmugele/)
+
+**Ida Olson**
+- [GitHub](https://github.com/idaolson)
+- [LinkedIn](https://www.linkedin.com/in/idaolson/)
+
 ## Technical & Learning Goals
 
 - Consume JSON APIs that require authentication 
@@ -87,13 +97,6 @@ Project requirements: [link](https://backend.turing.edu/module3/projects/viewing
 
 ## Database Schema
 ![Database Schema](https://user-images.githubusercontent.com/82777170/137946435-4c190067-a67b-49df-b0a1-9da4e17ae4cb.png)
-## Contributors
-**Kevin Mugele**
-- Github: [kevinmugele](https://github.com/kevinmugele)
-- LinkedIn: [Kevin Mugele](https://www.linkedin.com/in/kevinmugele/)
-**Ida Olson**
-- Github: [Ida Olson](https://github.com/idaolson)
-- LinkedIn: [Ida Olson] (https://www.linkedin.com/in/idaolson/)
 
 ## Local Setup
 
