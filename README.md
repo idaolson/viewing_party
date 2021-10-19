@@ -30,11 +30,15 @@ Viewing party is an application in which users can explore movie options and cre
 
 
 Project requirements: [link](https://backend.turing.edu/module3/projects/viewing_party/index)<br />
-## Tools Used
+
+## Tools Used:
+
 ### Framework
+
 <p>
   <img src="https://img.shields.io/badge/ruby%20on%20rails-b81818.svg?&style=for-the-badge&logo=rubyonrails&logoColor=white" />
 </p>
+
 ### Languages
 <p>
   <img src="https://img.shields.io/badge/ruby-CC342D.svg?&style=for-the-badge&logo=ruby&logoColor=white" />
