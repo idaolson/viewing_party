@@ -3,13 +3,13 @@ class MoviesController < ApplicationController
     movie_facade = MovieFacade.new
     @user = current_user
 
-    if params[:search].present?
-      @movies = movie_facade.search_by_title(params[:search])
-    elsif params[:upcoming].present?
-      @movies = movie_facade.upcoming_movies
-    else
-      @movies = movie_facade.top_rated_movies
-    end
+    @movies = if params[:search].present?
+                movie_facade.search_by_title(params[:search])
+              elsif params[:upcoming].present?
+                movie_facade.upcoming_movies
+              else
+                movie_facade.top_rated_movies
+              end
   end
 
   def show
