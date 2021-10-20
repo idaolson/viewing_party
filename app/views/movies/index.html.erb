@@ -1,29 +1,30 @@
-<h1>Welcome, <%= @user.name %>!</h1>
+<div class="container px-2 py-2" id="custom-cards">
+  <h1 class="pb-2 border-bottom">Welcome, <%= @user.name %>!</h1>
 
-<%= button_to "Find Top Rated Movies", movies_path, method: :get %><br>
+  <table>
+    <tr>
+      <td><%= button_to "Find Top Rated Movies", movies_path, method: :get %></td>
+      <td> </td>
+      <td><%= button_to "Find Upcoming Movies", movies_path, method: :get, params: {upcoming: 'upcoming'} %></td>
+      <td><%= form_with url: movies_path, method: :get , local: true do |f| %>
+        <%= f.label :search, "Search by movie title:" %>
+        <%= f.text_field :search %>
+        <%= f.submit "Find Movie" %>
+        <% end %></td>
+    </tr>
+    </table><br>
 
-<%= button_to "Find Upcoming Movies", movies_path, method: :get, params: {upcoming: 'upcoming'} %>
-
-
-<%= form_with url: movies_path, method: :get , local: true do |f| %>
-  <%= f.label :search, "Search by movie title" %>
-  <%= f.text_field :search %>
-  <%= f.submit "Find Movie" %>
-<% end %>
-<section>
-<h3>Movie Search Results:</h3>
-<table>
-  <tr>
-    <th>Movie</th>
-    <th>Vote Average</th>
-  </tr>
-
-<% @movies.each do |movie| %>
-<tr>
-  <td><%= link_to movie.title, movie_path(movie.id) %></td>
-  <td><%= movie.vote_average %></td>
-  </tr>
-<% end %>
-
-</table>
-</section>
+  <h2>Movie Search Results:</h2>
+  <table>
+    <tr>
+      <th>Movie</th>
+      <th>Vote Average</th>
+    </tr>
+  <% @movies.each do |movie| %>
+    <tr>
+      <td><%= link_to movie.title, movie_path(movie.id) %></td>
+      <td><%= movie.vote_average %></td>
+    </tr>
+    <% end %>
+  </table><br>
+</div>
