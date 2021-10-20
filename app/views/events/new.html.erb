@@ -1,23 +1,28 @@
+<div class="container px-2 py-2" id="custom-cards">
+  <h2 class="pb-2 border-bottom">Create Viewing Party:</h2>
+
+
 <%= form_with url: events_path, local: true do |f| %>
   <%= f.label :movie_title_label, "Movie Title" %><br>
-  <%= f.label :movie_title, @movie.title %><br>
+  <%= f.label :movie_title, @movie.title %><br><br>
   <%= f.hidden_field :movie_title, value: @movie.title %>
   <%= f.hidden_field :movie_id, value: @movie.id %>
 
   <%= f.label :duration, "Duration of Party" %>
-  <%= f.text_field :duration, value: @movie.runtime %><br>
+  <%= f.text_field :duration, value: @movie.runtime %><br><br>
 
   <%= f.label :date, "Date of Party" %>
-  <%= f.date_field :date %><br>
+  <%= f.date_field :date %><br><br>
 
   <%= f.label :time, "Time of Party" %>
-  <%= f.time_field :time %><br>
+  <%= f.time_field :time %><br><br>
 
-  <%= f.label :include, "Include:" %>
+  <%= f.label :include, "Include:" %><br>
     <% @user.friends.each do |friend| %>
       <%= f.check_box :"invitation[#{friend.email}]" %>
-      <%= f.label :"invitation[#{friend.email}]", friend.name %><br>
+      <%= f.label :"invitation[#{friend.email}]", friend.name %><br><br>
     <% end %>
 
-  <%= f.submit "Create Viewing Party" %><br>
+  <%= f.submit "Create Viewing Party" %><br><br>
 <% end %>
+</div>
