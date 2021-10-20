@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 19 Oct 2021 17:20:27 GMT
+      - Wed, 20 Oct 2021 17:39:51 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,9 +42,9 @@ http_interactions:
       X-Memc-Key:
       - 26fb04db4835e8d0d62686b58787a320c8598248
       X-Memc-Age:
-      - '7136'
+      - '1019'
       X-Memc-Expires:
-      - '7419'
+      - '15274'
       Etag:
       - W/"d86707e73933d54f07a0a1b335000dda"
       Vary:
@@ -52,17 +52,17 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 086617c9385713660fb060f989a2a627.cloudfront.net (CloudFront)
+      - 1.1 446e26a256db1310ae719d818e420898.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - JFK51-C1
+      - SEA19-C3
       X-Amz-Cf-Id:
-      - 7zrfAxhQkUJvSbVhU-TuG3ABGraWIcX1S8PFJBAR0sPIrxG9vq25ng==
+      - VeD_vKTQyL1uZ3NlP0ToO8NGfN0LvNHcX9MzmZJE3FJMEkkIW6Ynqw==
       Age:
-      - '985'
+      - '46'
     body:
       encoding: ASCII-8BIT
       string: '{"id":1573,"page":1,"results":[{"author":"talisencrw","author_details":{"name":"","username":"talisencrw","avatar_path":"/https://secure.gravatar.com/avatar/cbcc9350415274a3c68399bd37ca3ebc.jpg","rating":9.0},"content":"Great
         fun re-watching this after checking out the original for the first time. One
         of the very best filmic franchises out there, to be sure.","created_at":"2016-08-13T20:39:17.279Z","id":"57af8575925141289d006f7a","updated_at":"2021-06-23T15:57:50.257Z","url":"https://www.themoviedb.org/review/57af8575925141289d006f7a"}],"total_pages":1,"total_results":1}'
-  recorded_at: Tue, 19 Oct 2021 17:36:52 GMT
+  recorded_at: Wed, 20 Oct 2021 17:40:37 GMT
 recorded_with: VCR 6.0.0
