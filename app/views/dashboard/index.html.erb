@@ -1,56 +1,83 @@
-<h1>Welcome, <%= @user.name %>!</h1>
+<div class="container px-2 py-2" id="custom-cards">
+  <h1 class="pb-2 border-bottom">Welcome, <%= @user.name %>!</h1>
 
 <%= button_to "Discover Movies", discover_path, method: :get %>
+</div>
 
-<div id="friends">
-  <h3>Friends</h3>
+  <div class="container px-2 py-2" id="custom-cards">
+    <h3 class="pb-2 border-bottom">Friends:</h3>
+    <div id="friends">
+
   <%= form_with url: friendships_path, method: :post , local: true do |f| %>
-    <%= f.label :email, "Friend's Email" %>
+    <%= f.label :email, "Friend's Email:" %>
     <%= f.text_field :email %>
-    <%= f.submit "Add Friend" %>
+    <%= f.submit "Add Friend" %><br><br>
   <% end %>
 
   <% if @user.friends.count == 0 %>
     <p>You currently have no friends.</p>
   <% else %>
     <% @user.friends.each do |friend| %>
-      <%= friend.name %>
+      <h5><%= friend.name %></h5>
     <% end %>
   <% end %>
 </div>
-
-<div id="events">
-  <h3>Viewing Parties</h3>
-  <% @user.events.each do |event| %>
-  <section id="host-<%= event.id %>">
-    <%= link_to event.title, movie_path(event.movie_id) %>
-    <p>Date: <%= event.day.strftime("%-m/%-d/%Y") %></p>
-    <p>Time: <%= event.time.strftime("%l:%M %p") %></p>
-    <p>Hosting</p>
-    <p>Invited Friends:</p>
-      <% event.users.each do |user| %>
-        <%= user.name %>
-        <br>
-      <% end %>
-    </section>
-  <% end %>
-
-  <% @user.invited_events.each do |event| %>
-  <section id="invited-<%= event.id %>">
-    <%= link_to event.title, movie_path(event.movie_id) %>
-    <p>Date: <%= event.day.strftime("%-m/%-d/%Y") %></p>
-    <p>Time: <%= event.time.strftime("%l:%M %p") %></p>
-    <p>You're Invited</p>
-    <p>Host: <%= event.user.name %></p>
-    <p>Invited:</p>
-    <% event.users.each do |user| %>
-      <% if user.name == @user.name %>
-        <b><%= user.name %></b>
-      <% else %>
-        <%= user.name %>
-      <% end %>
-      <br>
-    <% end %>
-      </section>
-  <% end %>
 </div>
+  <div class="container px-2 py-2" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Viewing Parties:</h2>
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5" id="events">
+        <% @user.events.each do |event| %>
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1" id="host-<%= event.id %>">
+              <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%= link_to event.title, movie_path(event.movie_id) %></h2>
+
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto">
+                  <small>Hosting</small>
+                </li>
+                <li class="d-flex align-items-center me-3">
+                  <small><%= event.day.strftime("%-m/%-d/%Y") %></small>
+                </li>
+                <li class="d-flex align-items-center">
+                  <small><%= event.time.strftime("%l:%M %p") %></small>
+                </li>
+              </ul>
+              <% event.users.each do |user| %>
+                <%= user.name %><br>
+              <% end %>
+            </div>
+          </div>
+      </div>
+      <% end %>
+
+      <% @user.invited_events.each do |event| %>
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-1g" style="background-image: url('unsplash-photo-1.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1" id="invited-<%= event.id %>">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%= link_to event.title, movie_path(event.movie_id) %></h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <small>Invited</small>
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <small><%= event.day.strftime("%-m/%-d/%Y") %></small>
+              </li>
+              <li class="d-flex align-items-center">
+                <small><%= event.time.strftime("%l:%M %p") %></small>
+              </li>
+            </ul>
+            Host: <%= event.user.name %><br>
+            <% event.users.each do |user| %>
+              <% if user.name == @user.name %>
+                <b><%= user.name %></b>
+              <% else %>
+                <%= user.name %><br>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+    </div>
+    <% end %>
+    </div>
+  </div>

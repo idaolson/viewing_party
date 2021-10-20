@@ -1,32 +1,52 @@
-<h1>Welcome, <%= @user.name %>!</h1>
 
-<h2><%= @movie.title %></h2>
+<div class="container px-2 py-2" id="custom-cards">
+  <h1 class="pb-2 border-bottom"><%= @movie.title %></h1>
 
-<%= button_to "Create Viewing Party for Movie", new_event_path, method: :get, params: {movie_id: @movie.id} %>
+<%= button_to "Create Viewing Party for Movie", new_event_path, method: :get, params: {movie_id: @movie.id} %><br>
+<p><b>Vote Average:</b> <%= @movie.vote_average %></p>
+<p><b>Runtime:</b> <%= format_runtime(@movie.runtime) %></p>
 
-<p>Vote Average: <%= @movie.vote_average %></p>
-<p>Runtime: <%= format_runtime(@movie.runtime) %></p>
+<p><b>Genres(s):</b> <%= @movie.genres.to_sentence %></p>
+</div>
 
-<% @movie.genres.each do |genre| %>
-<p>Genre(s):<%= genre %></p>
-<% end %>
+<div class="container px-2 py-2" id="custom-cards">
+  <h2 class="pb-2 border-bottom">Summary:</h2>
+  <p><%= @movie.overview %></p>
+</div>
 
-<h4>Summary</h4>
-<p><%= @movie.overview %></p>
-
-
-<h2>Cast:</h2>
+<div class="container px-2 py-2" id="custom-cards">
+  <h2 class="pb-2 border-bottom">Cast:</h2>
+  <table>
 <% @cast.each do |actor| %>
-<p><%= actor.name %> as <%= actor.character %></p>
-<% end %>
+<tr>
 
-<h2> <%= @reviews.count %> Review(s):</h2>
+<td><b><%= actor.name %></b> as <b><%= actor.character %></b></td>
+</tr>
+
+<% end %>
+</table>
+</div>
+
+
+<div class="container px-2 py-2" id="custom-cards">
+    <h2 class="pb-2 border-bottom"><%= @reviews.count %> Review(s):</h2>
 <% @reviews.each do |review| %>
-<p><%= review.author %></p>
+<h5><%= review.author %></h5>
 <p><%= review.content %></p>
 <% end %>
+</div>
 
-<h2>Recommended Movies</h2>
-  <% @recommended.each do |movie| %>
-    <%= link_to movie.title, movie_path(movie.id) %><br>
-  <% end %>
+<div class="container px-2 py-2" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Recommended Movies:</h2>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    <% @recommended.each do |movie| %>
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-white bg-light rounded-5 shadow-lg">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%= link_to movie.title, movie_path(movie.id) %></h3>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  </div>

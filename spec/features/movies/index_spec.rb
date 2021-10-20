@@ -38,6 +38,15 @@ RSpec.describe "Movies Index page", :vcr  do
     expect(current_path).to eq(movies_path)
   end
 
+  it "has a button for upcoming movies" do
+    visit movies_path
+
+    expect(page).to have_button("Find Upcoming Movies")
+    click_button("Find Upcoming Movies")
+    expect(current_path).to eq(movies_path)
+    expect(page).to have_content("Eternals")
+  end
+
   it 'has a search option to search for specific movies' do
     visit movies_path
 

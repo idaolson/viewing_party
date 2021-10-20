@@ -1,11 +1,16 @@
+<div class="container px-2 py-2" id="custom-cards">
+  <h2 class="pb-2 border-bottom">Create New Account:</h2>
+
+
 <%= form_with model: @user, local: true do |f| %>
   <%= f.label :name, 'Name:' %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %><br><br>
   <%= f.label :email, 'Email:' %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email %><br><br>
   <%= f.label :password, 'Password:' %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password %><br><br>
   <%= f.label :password_confirmation, 'Re-enter password:' %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit 'Register' %>
+  <%= f.password_field :password_confirmation %><br><br>
+  <%= f.submit 'Register' %><br><br>
 <% end %>
+</div>
