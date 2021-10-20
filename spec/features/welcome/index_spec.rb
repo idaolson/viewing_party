@@ -4,7 +4,7 @@ RSpec.describe "Welcome Index" do
   it "welcomes" do
     visit root_path
 
-    expect(page).to have_content("Welcome to Awesome Viewing Party!")
+    expect(page).to have_content("Welcome to Viewing Party!")
   end
 
   it "logs in existing user" do
